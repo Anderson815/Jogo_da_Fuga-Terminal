@@ -36,11 +36,12 @@ public class Aula07Jogo {
         b[7] = new Bot();
         Bot.setBots(b);       
         Scanner leitor = new Scanner(System.in);
-        int op;
+        int op = 0;
         String resposta;
         
         // Menu
         do{
+            
             System.out.println("### Bem vindo ao jogo da Fuga ###");
             System.out.println("1 - Level");
             System.out.println("2 - Level");
@@ -49,51 +50,56 @@ public class Aula07Jogo {
             System.out.println("5 - Level");
             System.out.println("0 - Sair");
             System.out.println("Escolha uma das opções");
-            op = leitor.nextInt();
-            resposta = "n";
-            
-            do{
-                if(resposta.equals("s")){
-                    op++;
-                }
-                switch(op){
-                    case 0:
-                        break;
-                    case 1:
-                        Aula07Jogo.level(p, b, 1);                    
-                        break;
-                    case 2:
-                        Aula07Jogo.level(p, b, 2);
-                        break;
-                    case 3:
-                        Aula07Jogo.level(p, b, 3);
-                        break;
-                    case 4:
-                        Aula07Jogo.level(p, b, 4);
-                        break;
-                    case 5:
-                        Aula07Jogo.level(p, b, 5);
-                        break;
-                    default:
-                        System.out.println("Opção incorreta, por favor colocar um valor válido");
-                }
-                if(op != 0 && op != 5){
-                    do{
-                        System.out.println("Ir para o proxímo nével(S/N): ");
-                        resposta = leitor.next();
-                    }while(!resposta.equals("s") && !resposta.equals("n"));
-                }else{
-                    resposta = "n";
-                }
-                Bot.zerarBots(b);
-                p.zerarPlayer();
-            }while(resposta.equals("s"));
-        }while(op != 0);
-        
-        //Level 5
-        
+            try{
+                op = Integer.parseInt(leitor.next());
+                resposta = "n";
 
-        
+                do{
+                    if(resposta.equals("s")){
+                        op++;
+                    }
+                    switch(op){
+                        case 0:
+                            break;
+                        case 1:
+                            Aula07Jogo.level(p, b, 1);                    
+                            break;
+                        case 2:
+                            Aula07Jogo.level(p, b, 2);
+                            break;
+                        case 3:
+                            Aula07Jogo.level(p, b, 3);
+                            break;
+                        case 4:
+                            Aula07Jogo.level(p, b, 4);
+                            break;
+                        case 5:
+                            Aula07Jogo.level(p, b, 5);
+                            break;
+                        default:
+                            throw new IllegalArgumentException("opção inválida");
+                            //System.out.println("Opção incorreta, por favor colocar um valor válido");
+                    }
+                    if(op != 0 && op != 5){
+                        do{
+                            System.out.println("Ir para o proxímo level(S/N): ");
+                            resposta = leitor.next();
+                        }while(!resposta.equals("s") && !resposta.equals("n"));
+                    }else{
+                        resposta = "n";
+                    }
+                    Bot.zerarBots(b);
+                    p.zerarPlayer();
+                }while(resposta.equals("s"));
+            }catch(NumberFormatException erro){
+                System.out.println("\nVocê não escolheu nem uma das opções do MENU!!!\n");
+                op = 6;
+            }catch(IllegalArgumentException e){
+                System.out.println("\n!!! Você é isano, pois não temos ainda este nível HARD !!!");
+                System.out.println(e.getMessage() + "\n");
+            }
+        }while(op != 0);
+                
     }
       
     private static void level(Player p, Bot[] b, int n){
