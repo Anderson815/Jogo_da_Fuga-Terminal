@@ -53,6 +53,16 @@ public class Aula07Jogo {
                     }
                     switch(op){
                         case 0:
+                            System.out.println("\n\n\nGOSTOU DO PROJETO ???");
+                            System.out.println("Se a sua resposta for sim, então (por favor):");
+                            System.out.println("\n    1 - De sua recomendação, das habilidade utilizadas nesse projeto, no meu Linkedin;");
+                            System.out.println("        * JAVA;");
+                            System.out.println("        * Lógica de programação;");
+                            System.out.println("        * NetBeans;");
+                            System.out.println("        * OOP (Conceito de OrientaçãO a Objetos)");
+                            System.out.println("\n    2 - Caso você tenha algum comentário, feedback ou sugestão me mande uma mensagem também no meu Linkedin;");
+                            System.out.println("\n    Linkedin: linkedin.com/in/anderson-correia");
+                            System.out.println("\n    Muito obrigado pela sua colaboração !!!");
                             break;
                         case 1:
                             Aula07Jogo.level(p, b, 1);                    
