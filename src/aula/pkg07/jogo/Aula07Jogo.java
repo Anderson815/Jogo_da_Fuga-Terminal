@@ -7,15 +7,8 @@ public class Aula07Jogo {
         /* NOTA DE OBSERVAÇÃO
         Toda SubClasse pode ser considerada como se fosse a sua SuperClasse
         Neste programa eu posso considerar Player ou Bots como se fosse Jogadores
-        
-        Player p = new Player();
-        Bot b = new Bot();
-        
-        p.setLinha(10);
-        p.setColuna(10);
-        
-        b.setLinha(10);
-        b.setColuna(10);
+        por conta do Polimorfismo
+
         
         Preste atenção no código a seguir
         p.verificarPosicao(b); ele considera b, que é uma instância da classe Bot, como se fosse uma instância da classe Jogador
