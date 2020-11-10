@@ -1,8 +1,14 @@
 <h1>Jogo da Fuga - Terminal</h1>
 
 <h2>:runner: TENTE ESCAPAR ENQUANTO PODE</h2>
-<p>Neste jogo você será o P(Player) e terá que fugir dos Bs(Bots) que irão te perseguir</p>
-
+  <p>Neste jogo você será o P(Player) e terá que fugir dos Bs(Bots) que irão te perseguir, se você conseguir ficar 60 movimentos sem ser pego pelos Bots você ganha o jogo e poderá ir para o próximo nível.</p>
+  <p>Para não ser pego você tem que movimentar o P atráves das seguintes teclas mais a tecla Enter:</p>
+  <ul>
+    <li>W - Movimenta o P para cima</li>
+    <li>S - Movimenta o P para baixo</li>
+    <li>D - Movimenta o P para direita</li>
+    <li>A - Movimenta o P para esquerda</li>
+  </ul>
 <h2>:mortar_board: Habilidades usadas</h2>
 <ul>
   <li>Java</li>
